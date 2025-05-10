@@ -25,7 +25,7 @@ namespace workglass
             string username = txtusername.Text;
             string password = txtpassword.Text;
 
-            string connectionString = "Data Source=WINDOWS-93BUFTM\\SQLEXPRESS01;Initial Catalog=Gshop;Integrated Security=True;";
+            string connectionString = "Data Source=WINDOWS-93BUFTM\\SQLEXPRESS01;Initial Catalog=workGlass;Integrated Security=True;Encrypt=False";
 
 
 

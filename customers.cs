@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace workglass
 {
     public partial class customers : Form
     {
-        string connectionString = "Data Source=WINDOWS-93BUFTM\\SQLEXPRESS01;Initial Catalog=orders;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+        
 
+       
         public customers()
         {
             InitializeComponent();
@@ -22,8 +24,51 @@ namespace workglass
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] row = { "@customerID", "@customerName", "@customerEmail", "@customerPhone" };
-            dataGridView1.Rows.Add(row);
+            void LoadData()
+            {
+                string connectionString = "Data Source=WINDOWS-93BUFTM\\SQLEXPRESS01;Initial Catalog=workGlass;Integrated Security=True;Encrypt=False";
+                string query = "SELECT * FROM Customers";
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    dataGridView1.ClearSelection();
+                }
+            }
+            string connectionString = "Data Source=WINDOWS-93BUFTM\\SQLEXPRESS01;Initial Catalog=workGlass;Integrated Security=True;Encrypt=False";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO Customers (CustomerName,CustomerEmail,CustomerPhone) VALUES (@CustomerName,@CustomerEmail,@CustomerPhone)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                if (string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text))
+                {
+                    MessageBox.Show("الرجاء ملئ جميع الحقول");
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    dataGridView1.ClearSelection();
+                    return;
+                }
+
+                cmd.Parameters.AddWithValue("@CustomerName", textBox2.Text);
+                cmd.Parameters.AddWithValue("@CustomerEmail", textBox3.Text);
+                cmd.Parameters.AddWithValue("@CustomerPhone", int.Parse(textBox4.Text));
+                
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                MessageBox.Show("تمت الإضافة بنجاح");
+                LoadData();
+            }
 
         }
 
@@ -60,7 +105,16 @@ namespace workglass
 
         private void customers_Load(object sender, EventArgs e)
         {
+            string connectionString = "Data Source=WINDOWS-93BUFTM\\SQLEXPRESS01;Initial Catalog=workGlass;Integrated Security=True;Encrypt=False";
+            string query = "SELECT * FROM Customers";
 
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+            }
         }
     }
 }
