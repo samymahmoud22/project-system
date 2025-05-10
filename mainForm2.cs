@@ -24,7 +24,7 @@ namespace workglass
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnOwner_Click(object sender, EventArgs e)
@@ -69,6 +69,18 @@ namespace workglass
         {
             inventory inventoryForm = new inventory();
             inventoryForm.Show();
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            signin SigninForm = new signin();
+            SigninForm.Show();
+            this.Close();
         }
     }
 }

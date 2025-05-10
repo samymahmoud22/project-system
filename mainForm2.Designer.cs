@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm2));
             panel1 = new Panel();
+            button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -59,6 +60,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.Highlight;
+            panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
@@ -67,6 +69,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(178, 953);
             panel1.TabIndex = 0;
+            // 
+            // button4
+            // 
+            button4.FlatStyle = FlatStyle.System;
+            button4.Font = new Font("Segoe UI", 12F);
+            button4.ForeColor = SystemColors.ActiveCaptionText;
+            button4.Location = new Point(12, 465);
+            button4.Name = "button4";
+            button4.Size = new Size(118, 37);
+            button4.TabIndex = 4;
+            button4.Text = "Log out";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -307,5 +322,6 @@
         private Label label8;
         private Label label9;
         private Label label10;
+        private Button button4;
     }
 }
