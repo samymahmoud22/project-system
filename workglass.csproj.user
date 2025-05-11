@@ -7,6 +7,9 @@
     <Compile Update="mainForm2.Designer.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="OrderItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="orders.cs">
       <SubType>Form</SubType>
     </Compile>

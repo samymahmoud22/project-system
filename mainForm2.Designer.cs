@@ -49,6 +49,7 @@
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
+            button5 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -60,6 +61,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.Highlight;
+            panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
@@ -75,9 +77,9 @@
             button4.FlatStyle = FlatStyle.System;
             button4.Font = new Font("Segoe UI", 12F);
             button4.ForeColor = SystemColors.ActiveCaptionText;
-            button4.Location = new Point(12, 465);
+            button4.Location = new Point(12, 519);
             button4.Name = "button4";
-            button4.Size = new Size(118, 37);
+            button4.Size = new Size(138, 37);
             button4.TabIndex = 4;
             button4.Text = "Log out";
             button4.UseVisualStyleBackColor = true;
@@ -87,9 +89,9 @@
             // 
             button3.Font = new Font("Segoe UI", 12F);
             button3.ForeColor = SystemColors.ActiveCaptionText;
-            button3.Location = new Point(12, 193);
+            button3.Location = new Point(12, 168);
             button3.Name = "button3";
-            button3.Size = new Size(118, 37);
+            button3.Size = new Size(138, 37);
             button3.TabIndex = 3;
             button3.Text = "Customers";
             button3.UseVisualStyleBackColor = true;
@@ -99,9 +101,9 @@
             // 
             button2.Font = new Font("Segoe UI", 12F);
             button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.Location = new Point(12, 337);
+            button2.Location = new Point(12, 285);
             button2.Name = "button2";
-            button2.Size = new Size(118, 37);
+            button2.Size = new Size(138, 37);
             button2.TabIndex = 2;
             button2.Text = "Inventory";
             button2.UseVisualStyleBackColor = true;
@@ -113,7 +115,7 @@
             button1.ForeColor = SystemColors.ActiveCaptionText;
             button1.Location = new Point(12, 51);
             button1.Name = "button1";
-            button1.Size = new Size(118, 37);
+            button1.Size = new Size(138, 37);
             button1.TabIndex = 1;
             button1.Text = "Orders";
             button1.UseVisualStyleBackColor = true;
@@ -271,6 +273,17 @@
             label10.TabIndex = 7;
             label10.Text = "Select an option from the side bar to get started";
             // 
+            // button5
+            // 
+            button5.Font = new Font("Segoe UI", 12F);
+            button5.Location = new Point(12, 402);
+            button5.Name = "button5";
+            button5.Size = new Size(138, 37);
+            button5.TabIndex = 5;
+            button5.Text = "Order Items";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // mainForm2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -323,5 +336,6 @@
         private Label label9;
         private Label label10;
         private Button button4;
+        private Button button5;
     }
 }

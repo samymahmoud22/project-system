@@ -44,17 +44,18 @@
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox5 = new TextBox();
+            textBox6 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlText;
-            label1.Location = new Point(545, 35);
+            label1.Font = new Font("Segoe UI", 32.2F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.Highlight;
+            label1.Location = new Point(207, 158);
             label1.Name = "label1";
-            label1.Size = new Size(191, 50);
+            label1.Size = new Size(276, 72);
             label1.TabIndex = 0;
             label1.Text = "Inventory";
             // 
@@ -62,9 +63,9 @@
             // 
             button1.BackColor = SystemColors.Highlight;
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(168, 129);
+            button1.Location = new Point(1186, 361);
             button1.Name = "button1";
-            button1.Size = new Size(181, 52);
+            button1.Size = new Size(135, 38);
             button1.TabIndex = 1;
             button1.Text = "Add Item";
             button1.UseVisualStyleBackColor = false;
@@ -74,9 +75,9 @@
             // 
             button2.BackColor = Color.Red;
             button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(916, 129);
+            button2.Location = new Point(1013, 438);
             button2.Name = "button2";
-            button2.Size = new Size(181, 52);
+            button2.Size = new Size(135, 38);
             button2.TabIndex = 2;
             button2.Text = "Delete Item";
             button2.UseVisualStyleBackColor = false;
@@ -86,9 +87,9 @@
             // 
             button3.BackColor = Color.ForestGreen;
             button3.ForeColor = SystemColors.ButtonFace;
-            button3.Location = new Point(542, 129);
+            button3.Location = new Point(1186, 438);
             button3.Name = "button3";
-            button3.Size = new Size(181, 52);
+            button3.Size = new Size(135, 38);
             button3.TabIndex = 3;
             button3.Text = "Edit Item";
             button3.UseVisualStyleBackColor = false;
@@ -116,30 +117,31 @@
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(320, 479);
+            textBox1.Font = new Font("Segoe UI", 12.2F);
+            textBox1.Location = new Point(639, 438);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search by name or category";
-            textBox1.Size = new Size(517, 41);
+            textBox1.PlaceholderText = "Enter the ID";
+            textBox1.Size = new Size(340, 34);
             textBox1.TabIndex = 8;
             // 
             // button4
             // 
             button4.BackColor = SystemColors.Highlight;
             button4.ForeColor = SystemColors.Control;
-            button4.Location = new Point(898, 481);
+            button4.Location = new Point(470, 441);
             button4.Name = "button4";
-            button4.Size = new Size(135, 41);
+            button4.Size = new Size(135, 38);
             button4.TabIndex = 7;
             button4.Text = "Search";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(1063, 253);
+            label2.Location = new Point(1229, 109);
             label2.Name = "label2";
             label2.Size = new Size(64, 28);
             label2.TabIndex = 9;
@@ -150,7 +152,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(1063, 302);
+            label3.Location = new Point(1229, 165);
             label3.Name = "label3";
             label3.Size = new Size(92, 28);
             label3.TabIndex = 9;
@@ -160,7 +162,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(1063, 351);
+            label4.Location = new Point(1229, 221);
             label4.Name = "label4";
             label4.Size = new Size(88, 28);
             label4.TabIndex = 9;
@@ -170,7 +172,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F);
-            label5.Location = new Point(1063, 400);
+            label5.Location = new Point(1229, 277);
             label5.Name = "label5";
             label5.Size = new Size(54, 28);
             label5.TabIndex = 9;
@@ -179,7 +181,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 12F);
-            textBox2.Location = new Point(617, 246);
+            textBox2.Location = new Point(783, 102);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(340, 34);
             textBox2.TabIndex = 10;
@@ -187,7 +189,7 @@
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 12F);
-            textBox3.Location = new Point(617, 296);
+            textBox3.Location = new Point(783, 158);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(340, 34);
             textBox3.TabIndex = 10;
@@ -195,7 +197,7 @@
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 12F);
-            textBox4.Location = new Point(617, 346);
+            textBox4.Location = new Point(783, 214);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(340, 34);
             textBox4.TabIndex = 10;
@@ -203,10 +205,20 @@
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 12F);
-            textBox5.Location = new Point(617, 396);
+            textBox5.Location = new Point(783, 270);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(340, 34);
             textBox5.TabIndex = 10;
+            // 
+            // textBox6
+            // 
+            textBox6.Font = new Font("Segoe UI", 12.2F);
+            textBox6.Location = new Point(96, 438);
+            textBox6.Multiline = true;
+            textBox6.Name = "textBox6";
+            textBox6.PlaceholderText = "Enter the Name Or Category";
+            textBox6.Size = new Size(340, 34);
+            textBox6.TabIndex = 8;
             // 
             // inventory
             // 
@@ -221,6 +233,7 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(textBox6);
             Controls.Add(textBox1);
             Controls.Add(button4);
             Controls.Add(dataGridView1);
@@ -254,5 +267,6 @@
         private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox5;
+        private TextBox textBox6;
     }
 }
